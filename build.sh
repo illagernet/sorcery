@@ -36,4 +36,6 @@ javadoc -cp "$cp" -d doc @classes
 
 # Package plugin
 echo "Packaging plugin"
-jar -cvf $(meta name)-$(meta version).jar -C res . -C bin .
+jar="$(meta name)-$(meta version).jar"
+jar -cvf "$jar" -C res . -C bin .
+echo "Packaged as $jar"
