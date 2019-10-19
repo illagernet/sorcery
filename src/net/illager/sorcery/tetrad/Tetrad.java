@@ -1,4 +1,4 @@
-package net.illager.sorcery.component;
+package net.illager.sorcery.tetrad;
 
 import org.bukkit.block.Block;
 
@@ -42,21 +42,24 @@ public abstract class Tetrad {
      * @param origin An origin {@link org.bukkit.block.Block}
      * @return A list of resolved blocks. If the lateral and longitudinal offsets are both zero, only one block will be resolved. Otherwise, four blocks will be resolved.
      */
-    public Blocks[] resolve(Block origin) {
-        Blocks[] resolution;
-        resolution[0] = origin.getRelative(this.lateralOffset, this.normalOffset, this.longitudinalOffset);
+    public Block[] resolve(Block origin) {
         if(this.lateralOffset == 0 && this.longitudinalOffset == 0)
-            return resolution;
-        resolution[1] = origin.getRelative(this.longitudinalOffset, this.normalOffset, -this.lateralOffset);
-        resolution[2] = origin.getRelative(-this.lateralOffset, this.normalOffset, -this.longitudinalOffset);
-        resolution[3] = origin.getRelative(-this.longitudinalOffset, this.normalOffset, this.lateralOffset);
-        return resolution;
+            return new Block[] {
+                origin.getRelative(this.lateralOffset, this.normalOffset, this.longitudinalOffset)
+            };
+        else
+            return new Block[] {
+                origin.getRelative(this.lateralOffset, this.normalOffset, this.longitudinalOffset),
+                origin.getRelative(this.longitudinalOffset, this.normalOffset, -this.lateralOffset),
+                origin.getRelative(-this.lateralOffset, this.normalOffset, -this.longitudinalOffset),
+                origin.getRelative(-this.longitudinalOffset, this.normalOffset, this.lateralOffset)
+            };
     }
     
     /**
      * Check for a tetrad of {@link org.bukkit.block.Block blocks} meeting some criteria relative to an origin {@link org.bukkit.block.Block block}.
-     * @param origin An origin {@link org.bukkit.block.Block}
+     * @param origin An origin {@link org.bukkit.block.Block block}.
      * @return Whether a tetrad meeting some criteria is found.
      */
-    public boolean check(Block origin);
+    public abstract boolean check(Block origin);
 }

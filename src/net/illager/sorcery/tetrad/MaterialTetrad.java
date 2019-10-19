@@ -1,4 +1,4 @@
-package net.illager.sorcery.component;
+package net.illager.sorcery.tetrad;
 
 import org.bukkit.block.Block;
 import org.bukkit.Material;
@@ -6,7 +6,7 @@ import org.bukkit.Material;
 /**
  * A {@link Tetrad tetrad} of matching {@link org.bukkit.Material material} types.
  */
-public class MaterialTetrad implements Tetrad {
+public class MaterialTetrad extends Tetrad {
     
     /**
      * The {@link org.bukkit.Material material} type of the tetrad.

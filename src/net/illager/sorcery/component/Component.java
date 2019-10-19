@@ -1,37 +1,24 @@
 package net.illager.sorcery.component;
 
-import org.bukkit.Material;
+import org.bukkit.block.Block;
+import net.illager.sorcery.tetrad.Tetrad;
 
-public class Component {
-    
-    public static final Tiles[] BASE = {
-        new MaterialTetrad(0, 0, 0, Material.GLASS),
-        new MaterialTetrad(0, -1, 0, Material.OBISIDIAN),
-        new MaterialTetrad(0, -1, 1, Material.OBISIDIAN),
-        new AirTetrad(0, 1, 0)
-    };
-    
-    public static final Tiles[] CAPTURE_BASE = {
-        
-    }
-    
-    private Tiles[] tiles = {};
-    
-    public Component() {
-        // No initialization
-    }
+public abstract class Component {
     
     /**
-     * Check if all tiles
+     * {@link net.illager.sorcery.tetrad.Tetrads Tetrads} composing this component
      */
-    public boolean check() {
-        for(Tile tile : this.tiles)
-            if(!tile.check())
+    private Tetrad[] tetrads = {};
+    
+    /**
+     * Check for a component of {@link net.illager.sorcery.tetrad.Tetrad tetrads} meeting their respective criteria relative to an origin {@link org.bukkit.block.Block block}.
+     * @param origin An origin {@link org.bukkit.block.Block block}.
+     * @return Whether all {@link net.illager.sorcery.tetrad.Tetrad tetrads} meet their criteria.
+     */
+    public boolean check(Block origin) {
+        for(Tetrad tetrad : this.tetrads)
+            if(!tetrad.check(origin))
                 return false;
         return true;
-    }
-    
-    public static boolean checkAt(int x, int y, int z) {
-        
     }
 }
