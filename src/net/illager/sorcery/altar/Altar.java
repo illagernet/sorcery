@@ -1,4 +1,4 @@
-package net.illager.sorcery.api;
+package net.illager.sorcery.altar;
 
 import org.bukkit.Material;
 
