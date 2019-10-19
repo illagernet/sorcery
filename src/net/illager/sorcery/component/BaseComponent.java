@@ -4,6 +4,9 @@ import org.bukkit.Material;
 import net.illager.sorcery.tetrad.Tetrad;
 import net.illager.sorcery.tetrad.MaterialTetrad;
 
+/**
+ * The base component at the center of all {@link net.illager.sorcery.altar.Altar altars}.
+ */
 public class BaseComponent extends Component {
     
     /**

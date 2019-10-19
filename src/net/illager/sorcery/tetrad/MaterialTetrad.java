@@ -4,7 +4,7 @@ import org.bukkit.block.Block;
 import org.bukkit.Material;
 
 /**
- * A {@link Tetrad tetrad} of matching {@link org.bukkit.Material material} types.
+ * A tetrad of matching {@link org.bukkit.Material material} types.
  */
 public class MaterialTetrad extends Tetrad {
     
@@ -26,6 +26,8 @@ public class MaterialTetrad extends Tetrad {
     }
     
     /**
+     * Check that all resolved {@link org.bukkit.block.Block blocks} are the predefined {@link org.bukkit.Material material} type
+     * @return Whether all {@link org.bukkit.Material material} types match
      * @see Tetrad#check
      */
     @Override

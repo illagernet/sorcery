@@ -39,7 +39,7 @@ public abstract class Tetrad {
     
     /**
      * Resolve the tetrad of {@link org.bukkit.block.Block blocks} relative to an origin {@link org.bukkit.block.Block block}.
-     * @param origin An origin {@link org.bukkit.block.Block}
+     * @param origin An origin {@link org.bukkit.block.Block block}.
      * @return A list of resolved blocks. If the lateral and longitudinal offsets are both zero, only one block will be resolved. Otherwise, four blocks will be resolved.
      */
     public Block[] resolve(Block origin) {
