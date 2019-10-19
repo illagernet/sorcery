@@ -32,7 +32,7 @@ javac -cp "$cp" -source 1.8 -target 1.8 -d bin @classes
 # Generate javadocs
 echo "Generating Javadocs"
 clean doc
-javadoc -cp "$cp" -d doc @classes
+javadoc -cp "$cp" -link "https://hub.spigotmc.org/javadocs/spigot/" -d doc @classes
 
 # Package plugin
 echo "Packaging plugin"
