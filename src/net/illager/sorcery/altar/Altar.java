@@ -10,14 +10,22 @@ import net.illager.sorcery.component.Component;
 public abstract class Altar {
     
     /**
-     * The origin {@link org.bukkit.block.Block block} of the the altar from which all components are anchored
+     * The origin {@link org.bukkit.block.Block block} of the the altar from which all {@link net.illager.sorcery.component.Component components} are anchored
      */
-    private Block origin;
+    private final Block origin;
     
     /**
      * The {@link net.illager.sorcery.component.Component components} of the altar
      */
-    private Component[] components;
+    private final Component[] components;
+    
+    /**
+     * Constructor
+     * @param origin @{link #origin the origin block}
+     */
+    public Altar(Block origin) {
+        this.origin = origin;
+    }
     
     /**
      * Get the origin {@link org.bukkit.block.Block block} of the the altar

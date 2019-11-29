@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.annotation.plugin.author.Author;
 import org.bukkit.plugin.java.annotation.plugin.Website;
 import org.bukkit.plugin.java.annotation.plugin.ApiVersion;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.block.Block;
+import net.illager.sorcery.altar.Altar;
 
 @Plugin(name = "Sorcery", version = "1.0.0-beta")
 @Description("Welcome new players. Gives them a kit and reminds all other online players to welcome them.")
@@ -14,6 +14,8 @@ import org.bukkit.block.Block;
 @Website("https://illager.net")
 @ApiVersion(ApiVersion.Target.v1_13)
 public class SorceryPlugin extends JavaPlugin {
+    
+    private Altar[] altars;
     
     @Override
     public void onEnable() {

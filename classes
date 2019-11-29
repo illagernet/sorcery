@@ -1,1 +1,4 @@
 src/net/illager/sorcery/SorceryPlugin.java
+src/net/illager/sorcery/component/Component.java
+src/net/illager/sorcery/tetrad/Tetrad.java
+src/net/illager/sorcery/tetrad/MaterialTetrad.java
